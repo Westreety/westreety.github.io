@@ -22,7 +22,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Junyang Chen"
-  avatar           : "images/photo_512"
+  avatar           : "images/photo_512.jpg"
   bio              : "SAI M.phil in CUHK(SZ)"
   location         : "Shenzhen, Guangdong, China"
   employer         :
