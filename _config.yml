@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Junyang Chen"
-description              : "Academic Homepage"
+description              : 
 repository               : "Westreety/westreety.github.io"
 google_scholar_stats_use_cdn : false
 
@@ -23,11 +23,11 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Junyang Chen"
   avatar           : "images/photo_512.jpg"
-  bio              : "SAI M.Phil. @ CUHK(SZ)"
-  location         : "Shenzhen, Guangdong, China"
+  bio              : "SAI M.Phil. at CUHK(SZ)"
+  location         : "Shenzhen, China"
   employer         :
   pubmed           : 
-  googlescholar    : ""
+  googlescholar    : 
   email            : "Westreety@163.com"
   researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -37,7 +37,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : # e.g., "github username"
+  github           : "https://github.com/Westreety"
   google_plus      :
   keybase          :
   instagram        :
