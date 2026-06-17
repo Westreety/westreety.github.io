@@ -1,0 +1,120 @@
+/* ============================================
+   Dark Mode — CSS variables + prefers-color-scheme
+   ============================================ */
+
+:root {
+  --dm-bg: #ffffff;
+  --dm-text: #494e52;
+  --dm-heading: #3d4144;
+  --dm-link: #224b8d;
+  --dm-link-hover: #1a3a6e;
+  --dm-border: #f2f3f3;
+  --dm-masthead-bg: #ffffff;
+  --dm-masthead-text: #7a8288;
+  --dm-masthead-hover: #333;
+  --dm-masthead-border: #f2f3f3;
+  --dm-code-bg: #fafafa;
+  --dm-code-border: #f2f3f3;
+  --dm-navicon: #7a8288;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --dm-bg: #1a1a2e;
+    --dm-text: #c8c8d4;
+    --dm-heading: #e8e8f0;
+    --dm-link: #6da9ff;
+    --dm-link-hover: #90beff;
+    --dm-border: #2d2d44;
+    --dm-masthead-bg: #1a1a2e;
+    --dm-masthead-text: #a0a0b8;
+    --dm-masthead-hover: #ffffff;
+    --dm-masthead-border: #2d2d44;
+    --dm-code-bg: #222240;
+    --dm-code-border: #2d2d44;
+    --dm-navicon: #a0a0b8;
+  }
+}
+
+[data-theme="dark"] {
+  --dm-bg: #1a1a2e;
+  --dm-text: #c8c8d4;
+  --dm-heading: #e8e8f0;
+  --dm-link: #6da9ff;
+  --dm-link-hover: #90beff;
+  --dm-border: #2d2d44;
+  --dm-masthead-bg: #1a1a2e;
+  --dm-masthead-text: #a0a0b8;
+  --dm-masthead-hover: #ffffff;
+  --dm-masthead-border: #2d2d44;
+  --dm-code-bg: #222240;
+  --dm-code-border: #2d2d44;
+  --dm-navicon: #a0a0b8;
+}
+
+[data-theme="light"] {
+  --dm-bg: #ffffff;
+  --dm-text: #494e52;
+  --dm-heading: #3d4144;
+  --dm-link: #224b8d;
+  --dm-link-hover: #1a3a6e;
+  --dm-border: #f2f3f3;
+  --dm-masthead-bg: #ffffff;
+  --dm-masthead-text: #7a8288;
+  --dm-masthead-hover: #333;
+  --dm-masthead-border: #f2f3f3;
+  --dm-code-bg: #fafafa;
+  --dm-code-border: #f2f3f3;
+  --dm-navicon: #7a8288;
+}
+
+html, body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+html { background-color: var(--dm-bg); }
+body { background-color: var(--dm-bg); color: var(--dm-text); }
+#main { background-color: var(--dm-bg); }
+h1, h2, h3, h4, h5, h6 { color: var(--dm-heading); }
+a { color: var(--dm-link); transition: color 0.3s ease; }
+a:hover { color: var(--dm-link-hover); }
+
+body .masthead {
+  background-color: var(--dm-masthead-bg);
+  border-bottom: 1px solid var(--dm-masthead-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.greedy-nav a { color: var(--dm-masthead-text); }
+.greedy-nav a:hover { color: var(--dm-masthead-hover); }
+.navicon, .navicon:before, .navicon:after { background: var(--dm-navicon); }
+
+.masthead__menu { display: flex; align-items: center; justify-content: space-between; }
+.masthead__menu nav { flex: 1; }
+
+.theme-toggle-btn {
+  background: none; border: 1px solid var(--dm-masthead-text);
+  border-radius: 50%; width: 34px; height: 34px; cursor: pointer;
+  font-size: 15px; display: flex; align-items: center; justify-content: center;
+  margin-left: 12px; flex-shrink: 0; color: var(--dm-masthead-text);
+  transition: all 0.3s ease;
+}
+.theme-toggle-btn:hover { color: var(--dm-masthead-hover); border-color: var(--dm-masthead-hover); }
+
+.sidebar { background-color: var(--dm-bg); }
+.author__name { color: var(--dm-heading); }
+.author__bio { color: var(--dm-text); }
+.author__urls { background: transparent; }
+.author__urls:before { border-color: var(--dm-border) transparent; }
+.author__urls:after { border-color: var(--dm-bg) transparent; }
+.page__content { color: var(--dm-text); }
+.page__content h1 { border-bottom-color: var(--dm-border); }
+hr { border-top: 1px solid var(--dm-border); }
+blockquote { border-left-color: var(--dm-link); }
+code, pre { background-color: var(--dm-code-bg); border-color: var(--dm-code-border); color: var(--dm-text); }
+p > code, a > code, li > code, figcaption > code, td > code { background-color: var(--dm-code-bg); border-color: var(--dm-code-border); }
+table th, table td { border-color: var(--dm-border); }
+.paper-box { border-bottom-color: var(--dm-border); }
+[data-theme="dark"] .paper-box-image img { box-shadow: 3px 3px 6px rgba(0,0,0,.5); }
+.page__footer { background-color: var(--dm-bg); color: var(--dm-text); border-top: 1px solid var(--dm-border); }
+.page__footer a { color: var(--dm-link); }
+.archive__subtitle { color: var(--dm-text); border-bottom-color: var(--dm-border); }

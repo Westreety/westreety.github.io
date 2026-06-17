@@ -1,4 +1,54 @@
 <script src="assets/js/main.min.js"></script>
 
+<script>
+(function() {
+  var toggle = document.getElementById('themeToggle');
+  if (!toggle) return;
+
+  var DARK_BG = '#1a1a2e', LIGHT_BG = '#ffffff';
+  var DARK_BORDER = '#2d2d44', LIGHT_BORDER = '#f2f3f3';
+
+  function forceMasthead(isDark) {
+    var m = document.querySelector('.masthead');
+    if (m) {
+      m.style.setProperty('background-color', isDark ? DARK_BG : LIGHT_BG, 'important');
+      m.style.setProperty('border-bottom-color', isDark ? DARK_BORDER : LIGHT_BORDER, 'important');
+    }
+  }
+
+  function updateIcon() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    toggle.textContent = isDark ? '\u2600\ufe0f' : '\ud83c\udf19';
+  }
+
+  function setTheme(theme) {
+    var isDark = theme === 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateIcon();
+    forceMasthead(isDark);
+  }
+
+  // Init
+  var current = document.documentElement.getAttribute('data-theme');
+  if (!current) {
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  } else {
+    updateIcon();
+    forceMasthead(current === 'dark');
+  }
+
+  toggle.addEventListener('click', function() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    setTheme(isDark ? 'light' : 'dark');
+  });
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+  });
+})();
+</script>
+
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}
