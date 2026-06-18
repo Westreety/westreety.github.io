@@ -119,13 +119,32 @@ blockquote {
 
 a {
   
-  &:focus {
+  &:focus-visible {
     @extend %tab-focus;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
   }
 
   &:hover,
   &:active {
     outline: 0;
+  }
+}
+
+button,
+[role="button"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+summary {
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    @extend %tab-focus;
   }
 }
 

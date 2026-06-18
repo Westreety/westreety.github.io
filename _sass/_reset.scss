@@ -70,10 +70,14 @@ a {
   color: $link-color;
 }
 
-/* Apply focus state */
+/* Apply focus state for keyboard navigation */
 
-a:focus {
+a:focus-visible {
   @extend %tab-focus;
+}
+
+a:focus:not(:focus-visible) {
+  outline: 0;
 }
 
 /* Remove outline from links */

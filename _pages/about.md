@@ -31,7 +31,7 @@ My research interests center on Large Language Models (LLMs), with a particular 
 
 # 👋 关于我
 
-你好，我是 **陈俊扬（Junyang Chen）**。我目前是华南师范大学软件工程专业大四本科生，导师为杨欢教授。即将前往香港中文大学（深圳）攻读 M.Phil. 学位，导师为 <a href="https://chenjb1997.github.io/">陈景榜教授</a>。
+嗨，我是 **陈俊扬（Junyang Chen）**。我目前是华南师范大学软件工程专业的一名大四本科生，导师为杨欢教授。我即将前往香港中文大学（深圳）攻读 M.Phil. 学位，导师为 <a href="https://chenjb1997.github.io/">陈靖邦教授</a>。
 
 我的研究兴趣集中在大语言模型（LLMs），尤其关注高效训练与推理加速。我也对检索增强生成（RAG）、AI Agents、推荐系统和可解释人工智能（XAI）保持广泛兴趣。
 
@@ -53,7 +53,7 @@ My research interests center on Large Language Models (LLMs), with a particular 
 
 # 🎠 荣誉与奖励
 
-- 华南师范大学一等奖学金，2023-2024。
+- 华南师范大学 一等奖学金，2023-2024。
 - 全国大学生数学建模竞赛（CUMCM）广东省一等奖，2023。
 - 亚太地区大学生数学建模竞赛（APMCM）一等奖，2023。
 
@@ -88,7 +88,7 @@ My research interests center on Large Language Models (LLMs), with a particular 
 <div class="timeline-item">
   <img src="images/cuhksz_badge.png" alt="香港中文大学（深圳）校徽" class="timeline-item__logo">
   <div>
-    <strong>2026.09 - 2028</strong> &nbsp; 香港中文大学（深圳），哲学硕士。导师为 <a href="https://chenjb1997.github.io/">陈景榜教授</a>。
+    <strong>2026.09 - 2028</strong> &nbsp; 香港中文大学（深圳），哲学硕士。导师为 <a href="https://chenjb1997.github.io/">陈靖邦教授</a>。
   </div>
 </div>
 
@@ -107,8 +107,8 @@ My research interests center on Large Language Models (LLMs), with a particular 
 
 # 💈 Work Experience
 
-- *2026.05 - Present*, Research Assistant, Center for AI Theory and Systems, Shenzhen Loop Area Institute. Advised by <a href="https://chcoliang.github.io/">Prof. Congliang Chen</a> and <a href="https://chenjb1997.github.io/">Prof. Jingbang Chen</a>.
-- *2024.07 - 2025.06*, Guangdong Zhenying Smart City Technology Co., Ltd, Guangzhou, China.
+- *2026.05 - Present*, Research Assistant, Center for AI Theory and Systems, Shenzhen Loop Area Institute, Shenzhen, China. Advised by <a href="https://chcoliang.github.io/">Prof. Congliang Chen</a> and <a href="https://chenjb1997.github.io/">Prof. Jingbang Chen</a>.
+- *2024.07 - 2025.06*, Algorithm Intern, Guangdong Zhenying Smart City Technology Co., Ltd, Guangzhou, China.
 
 </div>
 
@@ -116,7 +116,7 @@ My research interests center on Large Language Models (LLMs), with a particular 
 
 # 💈 工作经历
 
-- *2026.05 - 至今*，科研助理，深圳河套学院人工智能理论与系统中心。导师为 <a href="https://chcoliang.github.io/">陈聪亮教授</a> 和 <a href="https://chenjb1997.github.io/">陈景榜教授</a>。
-- *2024.07 - 2025.06*，广东振英智慧城市科技有限公司，中国广州。
+- *2026.05 - 至今*，科研助理，深圳河套学院人工智能理论与系统中心，中国深圳。导师为 <a href="https://chcoliang.github.io/">陈淙靓教授</a> 和 <a href="https://chenjb1997.github.io/">陈靖邦教授</a>。
+- *2024.07 - 2025.06*，算法实习生，广东振英智慧城市科技有限公司，中国广州。
 
 </div>

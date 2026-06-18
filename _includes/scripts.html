@@ -5,28 +5,29 @@
   var toggle = document.getElementById('themeToggle');
   if (!toggle) return;
 
-  var DARK_BG = '#1a1a2e', LIGHT_BG = '#ffffff';
-  var DARK_BORDER = '#2d2d44', LIGHT_BORDER = '#f2f3f3';
-
-  function forceMasthead(isDark) {
-    var m = document.querySelector('.masthead');
-    if (m) {
-      m.style.setProperty('background-color', isDark ? DARK_BG : LIGHT_BG, 'important');
-      m.style.setProperty('border-bottom-color', isDark ? DARK_BORDER : LIGHT_BORDER, 'important');
-    }
-  }
-
   function updateIcon() {
     var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     toggle.textContent = isDark ? '\u2600\ufe0f' : '\ud83c\udf19';
   }
 
+  function getStoredTheme() {
+    try {
+      return localStorage.getItem('theme');
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveTheme(theme) {
+    try {
+      localStorage.setItem('theme', theme);
+    } catch (e) {}
+  }
+
   function setTheme(theme) {
-    var isDark = theme === 'dark';
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    saveTheme(theme);
     updateIcon();
-    forceMasthead(isDark);
   }
 
   // Init
@@ -36,7 +37,6 @@
     setTheme(prefersDark ? 'dark' : 'light');
   } else {
     updateIcon();
-    forceMasthead(current === 'dark');
   }
 
   toggle.addEventListener('click', function() {
@@ -45,7 +45,7 @@
   });
 
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-    if (!localStorage.getItem('theme')) setTheme(e.matches ? 'dark' : 'light');
+    if (!getStoredTheme()) setTheme(e.matches ? 'dark' : 'light');
   });
 })();
 </script>
