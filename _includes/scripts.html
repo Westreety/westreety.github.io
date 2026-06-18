@@ -24,10 +24,22 @@
     } catch (e) {}
   }
 
+  function withoutThemeTransition(callback) {
+    document.documentElement.classList.add('theme-switching');
+    callback();
+    window.requestAnimationFrame(function() {
+      window.requestAnimationFrame(function() {
+        document.documentElement.classList.remove('theme-switching');
+      });
+    });
+  }
+
   function setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    saveTheme(theme);
-    updateIcon();
+    withoutThemeTransition(function() {
+      document.documentElement.setAttribute('data-theme', theme);
+      saveTheme(theme);
+      updateIcon();
+    });
   }
 
   // Init

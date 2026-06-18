@@ -88,6 +88,11 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
+html.theme-switching,
+html.theme-switching * {
+  transition: none !important;
+}
+
 html, body, #main, .sidebar, .masthead, .greedy-nav, .greedy-nav .hidden-links, .author__urls, .page__content, .page__footer {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -134,13 +139,14 @@ body .masthead {
 }
 
 .theme-toggle-btn {
-  background: none; border: 1px solid var(--dm-masthead-text);
+  background: none;
+  border: 0;
   border-radius: 50%; width: 34px; height: 34px; cursor: pointer;
   font-size: 15px; display: flex; align-items: center; justify-content: center;
   flex-shrink: 0; color: var(--dm-masthead-text);
-  transition: all 0.3s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
-.theme-toggle-btn:hover { color: var(--dm-masthead-hover); border-color: var(--dm-masthead-hover); }
+.theme-toggle-btn:hover { color: var(--dm-masthead-hover); background-color: var(--dm-border); }
 
 .language-toggle-btn {
   display: flex;
@@ -148,7 +154,7 @@ body .masthead {
   gap: 0.35rem;
   height: 34px;
   padding: 0 0.6rem;
-  border: 1px solid var(--dm-masthead-text);
+  border: 0;
   border-radius: 6px;
   background: none;
   color: var(--dm-masthead-text);
@@ -156,9 +162,9 @@ body .masthead {
   font-family: $sans-serif;
   font-size: $type-size-6;
   line-height: 1;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
-.language-toggle-btn:hover { color: var(--dm-masthead-hover); border-color: var(--dm-masthead-hover); }
+.language-toggle-btn:hover { color: var(--dm-masthead-hover); background-color: var(--dm-border); }
 .language-toggle-btn__text { min-width: 2.25em; text-align: center; }
 
 .sidebar { background-color: var(--dm-bg); }
