@@ -101,14 +101,41 @@ body .masthead {
 .masthead__menu { display: flex; align-items: center; justify-content: space-between; }
 .masthead__menu nav { flex: 1; }
 
+.masthead__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+
 .theme-toggle-btn {
   background: none; border: 1px solid var(--dm-masthead-text);
   border-radius: 50%; width: 34px; height: 34px; cursor: pointer;
   font-size: 15px; display: flex; align-items: center; justify-content: center;
-  margin-left: 12px; flex-shrink: 0; color: var(--dm-masthead-text);
+  flex-shrink: 0; color: var(--dm-masthead-text);
   transition: all 0.3s ease;
 }
 .theme-toggle-btn:hover { color: var(--dm-masthead-hover); border-color: var(--dm-masthead-hover); }
+
+.language-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 34px;
+  padding: 0 0.6rem;
+  border: 1px solid var(--dm-masthead-text);
+  border-radius: 6px;
+  background: none;
+  color: var(--dm-masthead-text);
+  cursor: pointer;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+.language-toggle-btn:hover { color: var(--dm-masthead-hover); border-color: var(--dm-masthead-hover); }
+.language-toggle-btn__text { min-width: 2.25em; text-align: center; }
 
 .sidebar { background-color: var(--dm-bg); }
 .author__avatar img { border-color: var(--dm-border); }
@@ -129,3 +156,17 @@ table th, table td { border-color: var(--dm-border); }
 .page__footer { background-color: var(--dm-bg); color: var(--dm-text); border-top: 1px solid var(--dm-border); }
 .page__footer a { color: var(--dm-link); }
 .archive__subtitle { color: var(--dm-text); border-bottom-color: var(--dm-border); }
+
+.lang-block[data-lang] { display: none; }
+html[data-lang="en"] .lang-block[data-lang="en"],
+html[data-lang="zh"] .lang-block[data-lang="zh"] { display: block; }
+
+@include breakpoint(max-width $small) {
+  .masthead__controls { gap: 6px; margin-left: 8px; }
+  .language-toggle-btn {
+    width: 34px;
+    padding: 0;
+    justify-content: center;
+  }
+  .language-toggle-btn__text { display: none; }
+}

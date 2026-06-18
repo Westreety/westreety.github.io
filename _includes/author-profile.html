@@ -9,8 +9,8 @@
   </div>
 
   <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    <h3 class="author__name" data-i18n-en="{{ author.name }}" data-i18n-zh="{{ author.name_zh | default: author.name }}">{{ author.name }}</h3>
+    {% if author.bio %}<p class="author__bio" data-i18n-en="{{ author.bio }}" data-i18n-zh="{{ author.bio_zh | default: author.bio }}">{{ author.bio }}</p>{% endif %}
   </div>
 
   <div class="author__urls-wrapper">
@@ -20,7 +20,7 @@
         <li><div style="white-space: normal; margin-bottom: 1em;">{{ site.description }}</div></li>
       {% endif %}
       {% if author.location %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span data-i18n-en="{{ author.location }}" data-i18n-zh="{{ author.location_zh | default: author.location }}">{{ author.location }}</span></li>
       {% endif %}
       {% if author.employer %}
         <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>

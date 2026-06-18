@@ -111,6 +111,20 @@
     font-size: $type-size-6;
   }
 
+  .timeline-item {
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+  }
+
+  .timeline-item__logo {
+    width: 56px;
+    height: 56px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    object-fit: contain;
+  }
+
   /* blockquote citations */
   blockquote + .small {
     margin-top: -1.5em;

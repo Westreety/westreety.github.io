@@ -2,16 +2,22 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
+        <button type="button" aria-label="Open navigation menu"><div class="navicon"></div></button>
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="#about-me">Homepage</a></li>
+          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="#about-me" data-i18n-en="Homepage" data-i18n-zh="主页">Homepage</a></li>
           {% for link in site.data.navigation.main %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}" data-i18n-en="{{ link.title }}" data-i18n-zh="{{ link.title_zh | default: link.title }}">{{ link.title }}</a></li>
           {% endfor %}
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
-      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+      <div class="masthead__controls" aria-label="Display controls">
+        <button id="languageToggle" class="language-toggle-btn" type="button" aria-label="Switch to Chinese" title="Switch to Chinese">
+          <i class="fas fa-language" aria-hidden="true"></i>
+          <span class="language-toggle-btn__text">中文</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle-btn" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+      </div>
     </div>
   </div>
 </div>

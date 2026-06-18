@@ -1,10 +1,14 @@
 # main links links
 main:
   - title: "About Me"
+    title_zh: "关于我"
     url: "/#about-me"
   - title: "Honors"
-    url: "/#-honors-and-awards"
+    title_zh: "荣誉"
+    url: "/#honors"
   - title: "Education"
-    url: "/#-educations"
+    title_zh: "教育经历"
+    url: "/#education"
   - title: "Work Experience"
+    title_zh: "工作经历"
     url: "/#work-experience"

@@ -50,5 +50,72 @@
 })();
 </script>
 
+<script>
+(function() {
+  var toggle = document.getElementById('languageToggle');
+  if (!toggle) return;
+
+  var STORAGE_KEY = 'siteLanguage';
+  var supported = { en: true, zh: true };
+
+  function getStoredLanguage() {
+    try {
+      return localStorage.getItem(STORAGE_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function saveLanguage(lang) {
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch (e) {}
+  }
+
+  function preferredLanguage() {
+    var stored = getStoredLanguage();
+    if (supported[stored]) return stored;
+
+    var languages = navigator.languages || [navigator.language || 'en'];
+    for (var i = 0; i < languages.length; i++) {
+      if (/^zh/i.test(languages[i])) return 'zh';
+    }
+
+    return 'en';
+  }
+
+  function updateI18nText(lang) {
+    var attr = 'data-i18n-' + lang;
+    document.querySelectorAll('[data-i18n-en][data-i18n-zh]').forEach(function(node) {
+      var text = node.getAttribute(attr);
+      if (text) node.textContent = text;
+    });
+  }
+
+  function setLanguage(lang) {
+    if (!supported[lang]) lang = 'en';
+
+    document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-CN' : 'en');
+    document.documentElement.setAttribute('data-lang', lang);
+    saveLanguage(lang);
+
+    updateI18nText(lang);
+
+    var nextLabel = lang === 'zh' ? 'Switch to English' : 'Switch to Chinese';
+    toggle.setAttribute('aria-label', nextLabel);
+    toggle.setAttribute('aria-pressed', lang === 'zh' ? 'true' : 'false');
+    toggle.setAttribute('title', nextLabel);
+    toggle.querySelector('.language-toggle-btn__text').textContent = lang === 'zh' ? 'EN' : '中文';
+  }
+
+  setLanguage(preferredLanguage());
+
+  toggle.addEventListener('click', function() {
+    var isChinese = document.documentElement.getAttribute('data-lang') === 'zh';
+    setLanguage(isChinese ? 'en' : 'zh');
+  });
+})();
+</script>
+
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}

@@ -22,9 +22,12 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 # Site Author
 author:
   name             : "Junyang Chen"
+  name_zh          : "陈俊扬"
   avatar           : "images/photo_512.jpg"
   bio              : "M.Phil. Student, CUHK-Shenzhen"
+  bio_zh           : "香港中文大学（深圳）哲学硕士生"
   location         : "Shenzhen, China"
+  location_zh      : "中国深圳"
   employer         :
   pubmed           : 
   googlescholar    : 
