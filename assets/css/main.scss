@@ -39,7 +39,6 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
-@import "dark";
 
 .paper-box {
     display: flex;
@@ -108,3 +107,5 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+@import "dark";
